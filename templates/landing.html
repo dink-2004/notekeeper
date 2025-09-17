@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="container text-center">
+    
+    <!-- Hero Section -->
+    <div class="mb-5">
+      <br>
+      <br>
+      <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" width="70" class="mb-3">
+      <h1 class="fw-bold display-5 text-white">Welcome to <span class="text-gradient">Notes Keeper</span></h1>
+      <p class="lead text-light mb-4">Your simple and secure way to keep track of all your important notes in one place.</p>
+      <a href="{{ url_for('login') }}" class="btn btn-gradient fw-semibold px-4 py-2 rounded-pill shadow-sm me-2">Login</a>
+      <a href="{{ url_for('register') }}" class="btn btn-outline-light fw-semibold px-4 py-2 rounded-pill shadow-sm">Register</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container my-5">
+      <h2 class="text-center mb-4 fw-bold text-white">Why Choose <span class="text-gradient">Notes Keeper</span>?</h2>
+
+      <div class="row justify-content-center g-4">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="glass-card shadow-lg border-0 rounded-4 feature-card text-center p-4 h-100">
+            <div class="feature-icon bg-primary text-white mb-3 fs-3 d-inline-flex justify-content-center align-items-center rounded-circle" style="width:60px;height:60px;">
+              📝
+            </div>
+            <h5 class="fw-bold">Easy Note Taking</h5>
+            <p class="text-muted">Create, edit, and manage your notes effortlessly with our clean interface.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="glass-card shadow-lg border-0 rounded-4 feature-card text-center p-4 h-100">
+            <div class="feature-icon bg-warning text-dark mb-3 fs-3 d-inline-flex justify-content-center align-items-center rounded-circle" style="width:60px;height:60px;">
+              🔒
+            </div>
+            <h5 class="fw-bold">Secure Access</h5>
+            <p class="text-muted">Your notes are protected with secure login and password encryption.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="glass-card shadow-lg border-0 rounded-4 feature-card text-center p-4 h-100">
+            <div class="feature-icon bg-success text-white mb-3 fs-3 d-inline-flex justify-content-center align-items-center rounded-circle" style="width:60px;height:60px;">
+              📱
+            </div>
+            <h5 class="fw-bold">Fully Responsive</h5>
+            <p class="text-muted">Access your notes anytime, anywhere, from any device.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

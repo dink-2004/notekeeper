@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card shadow-lg p-4" style="border-radius:18px; background:linear-gradient(135deg,#fdfbfb 0%,#ebedee 100%);">
+  <h3 class="fw-bold text-primary mb-3">
+    <i class="bi bi-file-earmark-text me-2"></i>{{ note.title }}
+  </h3>
+  <p class="text-secondary" style="white-space:pre-line; font-size:1.1rem;">
+    {{ note.content }}
+  </p>
+  <div class="mt-4 d-flex justify-content-between">
+    <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary">
+      <i class="bi bi-arrow-left"></i> Back
+    </a>
+    <div>
+      <a href="/edit/{{ note.id }}" class="btn btn-warning px-3"><i class="bi bi-pencil-square"></i> Edit</a>
+      <a href="/delete/{{ note.id }}" class="btn btn-danger px-3"><i class="bi bi-trash"></i> Delete</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

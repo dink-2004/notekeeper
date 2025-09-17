@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card p-4 shadow-lg col-md-8 mx-auto edit-note-card" style="border-radius:18px; background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); box-shadow: 0 6px 36px rgba(33, 150, 243, 0.08);">
+  <div class="d-flex align-items-center mb-3">
+    <span class="me-2 fs-2 text-primary"><i class="bi bi-pencil-square"></i></span>
+    <h3 class="mb-0 fw-bold">Edit Your Note</h3>
+  </div>
+  <form method="POST" autocomplete="off">
+    <div class="mb-3">
+      <label for="title" class="form-label fw-semibold text-secondary">Title</label>
+      <input type="text" id="title" name="title" class="form-control form-control-lg"
+             value="{{ note.title }}" required maxlength="100" placeholder="Enter note title"
+             style="background: #f7fbff; border-radius: 10px; border: 1.5px solid #a6c8f3;">
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label fw-semibold text-secondary">Content</label>
+      <textarea id="content" name="content" class="form-control form-control-lg" rows="5"
+                required maxlength="1000" placeholder="Write your note..."
+                style="background: #f7fbff; border-radius: 10px; border: 1.5px solid #a6c8f3;">{{ note.content }}</textarea>
+    </div>
+    <div class="d-flex justify-content-between">
+      <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary px-4">
+        <i class="bi bi-arrow-left"></i> Cancel
+      </a>
+      <button class="btn btn-success px-4">
+        <i class="bi bi-save"></i> Update Note
+      </button>
+    </div>
+  </form>
+</div>
+<style>
+  .edit-note-card input:focus, .edit-note-card textarea:focus {
+    border-color: #2196f3 !important;
+    box-shadow: 0 0 0 2px #b3e0f7;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px);}
+    to   { opacity: 1; transform: translateY(0);}
+  }
+  .edit-note-card {
+    animation: fadeInUp 0.4s;
+  }
+</style>
+{% endblock %}
